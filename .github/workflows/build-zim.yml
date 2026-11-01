@@ -1,0 +1,59 @@
+name: Build and Release ZIM
+
+on:
+  push:
+    branches: [ "main" ]
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build Static Site
+        run: |
+          python tools/build_site.py
+
+      - name: Create Output Directory
+        run: |
+          mkdir -p dist
+
+      - name: Create ZIM Archive using official OpenZIM container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/data \
+            ghcr.io/openzim/zim-tools \
+            zimwriterfs \
+            --welcome=index.html \
+            --illustration=icon.png \
+            --name=turkish-prepper \
+            --language=tur \
+            --title="turkish-prepper" \
+            --description="Cevrimdisi Turkce Afet, Ilk Yardim ve Hayatta Kalma Bilgi Havuzu" \
+            --creator="turkish-prepper Toplulugu" \
+            --publisher="woloop" \
+            /data/site \
+            /data/dist/turkish_prepper.zim
+
+      - name: Upload ZIM Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: turkish_prepper_zim
+          path: dist/turkish_prepper.zim
+
+      - name: Release ZIM on tag
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/turkish_prepper.zim
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

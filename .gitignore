@@ -1,0 +1,8 @@
+site/
+dist/
+output/
+*.zim
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
