@@ -1,3 +1,14 @@
+# turkish-prepper İkili Lisans Bildirimi (Dual Licensing)
+
+Bu proje, açık kaynak topluluğu ve telif mevzuatıyla tam uyum sağlamak amacıyla iki farklı lisans altında sunulmaktadır:
+
+---
+
+## 1. Kod ve Yazılım Araçları Lisansı: MIT License
+
+Projedeki tüm yazılım araçları, otomasyon betikleri ve derleme kodları (`tools/`, `.github/workflows/` vb.) MIT Lisansı kapsamındadır:
+
+```text
 MIT License
 
 Copyright (c) 2026 turkish-prepper Topluluğu
@@ -19,3 +30,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+---
+
+## 2. İçerik ve Dokümantasyon Lisansı: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+Projedeki tüm yazılı rehberler, dokümanlar, çeviriler ve terminoloji sözlükleri (`docs/`, `glossary/`, `README.md`, `kaynaklar.md`) CC BY-SA 4.0 lisansı altındadır.
+
+Bu lisans uyarınca:
+* **Paylaşabilirsiniz:** İçeriği herhangi bir ortam veya formatta kopyalayabilir ve yeniden dağıtabilirsiniz.
+* **Uyarlayabilirsiniz:** İçeriği karıştırabilir, aktarabilir ve üzerine inşa edebilirsiniz.
+* **Şartlar:**
+  * **Atıf (Attribution):** Uygun referans vermeli, lisansa bir bağlantı sağlamalı ve değişiklik yapıldıysa belirtmelisiniz.
+  * **Aynı Lisansla Paylaşım (ShareAlike):** Materyali karıştırır, dönüştürür veya üzerine inşa ederseniz, katkılarınızı orijinali ile aynı lisans altında dağıtmalısınız.
+
+Tam lisans metni için: https://creativecommons.org/licenses/by-sa/4.0/legalcode.tr
