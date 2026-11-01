@@ -358,6 +358,17 @@ def build():
         })
         
     if DOCS_DIR.exists():
+        # Direct markdown files in docs/
+        for md_file in sorted(DOCS_DIR.glob("*.md")):
+            title = md_file.stem.replace("-", " ").title()
+            pages.append({
+                "title": title,
+                "category": "Fihrist & Kaynaklar",
+                "path": md_file,
+                "out_name": f"docs_{md_file.stem}.html"
+            })
+            
+        # Subdirectories in docs/
         for cat_dir in sorted(DOCS_DIR.iterdir()):
             if cat_dir.is_dir():
                 cat_name = cat_dir.name.replace("-", " ").title()

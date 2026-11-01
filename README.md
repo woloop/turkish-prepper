@@ -35,6 +35,7 @@ Hatalı bir ilk yardım veya müdahale bilgisi sahada telafisi mümkün olmayan 
 ```text
 turkish-prepper/
 ├── docs/
+│   ├── vikipedi-afet-fihristi.md   # Kiwix Vikipedi & Vikikitap için arama ve konu fihristi
 │   ├── ilk-yardim/                 # T.C. Sağlık Bakanlığı ve ERC uyumlu özgün müdahale yönergeleri
 │   ├── afet-ve-enkaz-yonetimi/     # AFAD ve INSARAG arama-kurtarma saha protokolleri
 │   ├── hijyen-ve-halk-sagligi/     # Su sanitasyonu, atık yönetimi ve salgın önleme rehberleri
